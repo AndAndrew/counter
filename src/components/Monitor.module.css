@@ -1,0 +1,15 @@
+
+.monitor {
+    font-size: 50px;
+    width: 300px;
+    height: 100px;
+    padding-top: 20px;
+}
+
+.error {
+    font-size: 50px;
+    width: 300px;
+    height: 100px;
+    padding-top: 20px;
+    color: red;
+}
