@@ -1,5 +1,5 @@
 import {Monitor} from "./Monitor";
-import {ButtonBlock} from "./ButtonBlock";
+import {CounterButtonBlock} from "./CounterButtonBlock";
 import s from './Counter.module.css';
 import {useState} from "react";
 
@@ -28,7 +28,7 @@ export const Counter = () => {
     return (
         <div className={s.counter}>
             <Monitor counter={count} error={error}/>
-            <ButtonBlock inc={plusOne} reset={reset} error={error}/>
+            <CounterButtonBlock inc={plusOne} reset={reset} error={error}/>
         </div>
     )
 }

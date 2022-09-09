@@ -1,4 +1,4 @@
-import {Button} from "./Button";
+import {Button} from "../Button/Button";
 
 type propsType = {
     inc: () => void;
@@ -6,7 +6,7 @@ type propsType = {
     error: boolean;
 }
 
-export const ButtonBlock = (props: propsType) => {
+export const CounterButtonBlock = (props: propsType) => {
 
     const plusOne = () => {
         props.inc();
