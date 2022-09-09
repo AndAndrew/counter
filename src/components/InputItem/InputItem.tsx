@@ -4,7 +4,8 @@ import {ChangeEvent} from "react";
 type InputItemPropsType = {
     nickName: string,
     value: number,
-    changeValue: (value: number) => void
+    changeValue: (value: number) => void,
+    error: boolean
 }
 
 export const InputItem = (props: InputItemPropsType) => {
@@ -17,7 +18,10 @@ export const InputItem = (props: InputItemPropsType) => {
     return (
         <div>
             <div className={s.item}>{props.nickName}</div>
-            <input className={s.item} value={props.value} type="number" onChange={onChangeHandler}/>
+            <input className={props.error ? s.item + ' ' + s.error : s.item}
+                   value={props.value}
+                   type="number"
+                   onChange={onChangeHandler}/>
         </div>
     )
 }

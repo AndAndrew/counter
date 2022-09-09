@@ -3,6 +3,7 @@ import {Button} from "../Button/Button";
 type propsType = {
     inc: () => void;
     reset: () => void;
+    valueError: boolean,
     error: boolean;
 }
 
@@ -18,8 +19,8 @@ export const CounterButtonBlock = (props: propsType) => {
 
     return (
         <div>
-            <Button callBack={plusOne} nickName={'Inc'} disabled={props.error}/>
-            <Button callBack={reset} nickName={'Reset'} disabled={false}/>
+            <Button callBack={plusOne} nickName={'Inc'} disabled={props.error || props.valueError}/>
+            <Button callBack={reset} nickName={'Reset'} disabled={props.valueError}/>
         </div>
     )
 }

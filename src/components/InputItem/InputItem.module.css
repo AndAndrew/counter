@@ -3,3 +3,15 @@
     margin: auto;
     display: inline-block;
 }
+
+.error {
+    padding: 5px 5px 5px 5px;
+    border: 2px darkred solid;
+    background-color: lightpink;
+}
+
+input {
+    outline: none;
+    border: 2px #61dafb solid;
+    border-radius: 5px;
+}

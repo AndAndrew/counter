@@ -1,24 +1,27 @@
 import {InputItem} from "../InputItem/InputItem";
 import s from './SettingsMenu.module.css';
-import {useState} from "react";
 
-export const SettingsMenu = () => {
+type PropsType = {
+    startValue: number,
+    maxValue: number,
+    changeStartValue: (value: number) => void,
+    changeMaxValue: (value: number) => void,
+    startValueError: boolean,
+    maxValueError: boolean
+}
 
-    const [minValue, setMinValue] = useState(0);
-    const [maxValue, setMaxValue] = useState(0);
-    const [error, setError] = useState(false);
-
-    const changeMinValue = (value: number) => {
-        setMinValue(value);
-    }
-    const changeMaxValue = (value: number) => {
-        setMaxValue(value);
-    }
+export const SettingsMenu = (props: PropsType) => {
 
     return (
         <div className={s.settingsMenu}>
-            <InputItem nickName="min value:" value={minValue} changeValue={changeMinValue}/>
-            <InputItem nickName="max value:" value={maxValue} changeValue={changeMaxValue}/>
+            <InputItem error={props.startValueError}
+                       nickName="start value:"
+                       value={props.startValue}
+                       changeValue={props.changeStartValue}/>
+            <InputItem error={props.maxValueError}
+                       nickName="max value:"
+                       value={props.maxValue}
+                       changeValue={props.changeMaxValue}/>
         </div>
     )
 }

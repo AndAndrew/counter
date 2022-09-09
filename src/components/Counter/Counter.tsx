@@ -3,7 +3,11 @@ import {CounterButtonBlock} from "./CounterButtonBlock";
 import s from './Counter.module.css';
 import {useState} from "react";
 
-export const Counter = () => {
+type PropsType = {
+    valueError: boolean,
+}
+
+export const Counter = (props: PropsType) => {
 
     const [count, setCount] = useState(0);
     const [error, setError] = useState<boolean>(false);
@@ -27,8 +31,13 @@ export const Counter = () => {
 
     return (
         <div className={s.counter}>
-            <Monitor counter={count} error={error}/>
-            <CounterButtonBlock inc={plusOne} reset={reset} error={error}/>
+            <Monitor counter={count}
+                     error={error}
+                     valueError={props.valueError}/>
+            <CounterButtonBlock inc={plusOne}
+                                reset={reset}
+                                error={error}
+                                valueError={props.valueError}/>
         </div>
     )
 }
