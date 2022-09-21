@@ -5,39 +5,43 @@ import {useState} from "react";
 
 type PropsType = {
     valueError: boolean,
+    startValue: number,
+    count: number,
+    changeCount: (newValue: number) => void,
+    maxValue: number,
+    isSet: boolean
 }
 
 export const Counter = (props: PropsType) => {
 
-    const [count, setCount] = useState(0);
-    const [error, setError] = useState<boolean>(false);
-
-    const maxCount = 5;
+    const [countError, setCountError] = useState<boolean>(false);
 
     const plusOne = () => {
-        const newValue = count + 1;
-        if (newValue <= maxCount) {
-            setCount(newValue);
+        const newValue: number = props.count + 1;
+        if (newValue <= props.maxValue) {
+            props.changeCount(newValue);
         }
-        if (newValue === maxCount) {
-            setError(true);
+        if (newValue === props.maxValue) {
+            setCountError(true);
         }
     }
 
     const reset = () => {
-        setCount(0);
-        setError(false);
+        props.changeCount(props.startValue);
+        setCountError(false);
     }
 
     return (
         <div className={s.counter}>
-            <Monitor counter={count}
-                     error={error}
-                     valueError={props.valueError}/>
+            <Monitor counter={props.count}
+                     error={countError}
+                     valueError={props.valueError}
+                     isSet={props.isSet}/>
             <CounterButtonBlock inc={plusOne}
                                 reset={reset}
-                                error={error}
-                                valueError={props.valueError}/>
+                                error={countError}
+                                valueError={props.valueError}
+                                isSet={props.isSet}/>
         </div>
     )
 }

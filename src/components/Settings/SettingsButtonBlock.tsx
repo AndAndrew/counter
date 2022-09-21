@@ -1,15 +1,15 @@
 import {Button} from "../Button/Button";
 
 type PropsType = {
-    error: boolean,
+    isDisable: boolean,
+    setValues: () => void,
 }
 
 export const SettingsButtonBlock = (props: PropsType) => {
 
     return (
         <div>
-            <Button callBack={() => {
-            }} nickName={"Set"} disabled={props.error}/>
+            <Button callBack={props.setValues} nickName={"Set"} disabled={props.isDisable}/>
         </div>
     )
 }

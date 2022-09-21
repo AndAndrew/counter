@@ -11,7 +11,7 @@ type InputItemPropsType = {
 export const InputItem = (props: InputItemPropsType) => {
 
     const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-        const value = event.currentTarget.value as any as number;
+        const value = Number(event.currentTarget.value);
         props.changeValue(value);
     }
 

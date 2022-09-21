@@ -4,40 +4,47 @@ import {SettingsButtonBlock} from "./SettingsButtonBlock";
 import {useState} from "react";
 
 type PropsType = {
-    setValueError: (error: boolean) => void,
+    startValue: number,
+    changeCountValue: (value: number) => void,
+    maxValue: number,
+    changeStartValue: (value: number) => void,
+    changeMaxValue: (value: number) => void,
+    valueError: boolean,
+    changeValueError: (error: boolean) => void,
+    isSet: boolean,
+    changeIsSetStatus: (status: boolean) => void
 }
 
 export const Settings = (props: PropsType) => {
 
-    const [startValue, setStartValue] = useState(0);
-    const [maxValue, setMaxValue] = useState(5);
-    const [startValueError, setStartValueError] = useState(false);
-    const [maxValueError, setMaxValueError] = useState(false);
+    const [startValue, setStartValue] = useState<number>(props.startValue);
+    const [maxValue, setMaxValue] = useState<number>(props.maxValue);
+
 
     const changeStartValue = (value: number) => {
-        setStartValueError(false);
-        props.setValueError(false);
+        props.changeIsSetStatus(false);
         setStartValue(value);
-        if (value < 0 || value >= maxValue) {
-            setStartValueError(true);
-            props.setValueError(true);
-        }
     }
-
     const changeMaxValue = (value: number) => {
-        setMaxValueError(false);
-        props.setValueError(false);
+        props.changeIsSetStatus(false);
         setMaxValue(value);
-        if (value < 0 || value <= startValue) {
-            setMaxValueError(true);
-            props.setValueError(true);
-        }
+    }
+    const setValues = () => {
+        props.changeStartValue(startValue);
+        props.changeCountValue(startValue);
+        props.changeMaxValue(maxValue);
+        props.changeIsSetStatus(true);
     }
 
     return (
         <div className={s.settings}>
-            <SettingsMenu startValueError={startValueError} maxValueError={maxValueError} startValue={startValue} maxValue={maxValue} changeStartValue={changeStartValue} changeMaxValue={changeMaxValue}/>
-            <SettingsButtonBlock error={startValueError || maxValueError}/>
+            <SettingsMenu startValue={startValue}
+                          maxValue={maxValue}
+                          changeStartValue={changeStartValue}
+                          changeMaxValue={changeMaxValue}
+                          changeValueError={props.changeValueError}
+            />
+            <SettingsButtonBlock isDisable={props.valueError || props.isSet} setValues={setValues}/>
         </div>
     )
 }
