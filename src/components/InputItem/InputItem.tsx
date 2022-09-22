@@ -16,7 +16,7 @@ export const InputItem = (props: InputItemPropsType) => {
     }
 
     return (
-        <div>
+        <div className={s.inputItem}>
             <div className={s.item}>{props.nickName}</div>
             <input className={props.error ? s.item + ' ' + s.error : s.item}
                    value={props.value}

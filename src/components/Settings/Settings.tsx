@@ -20,7 +20,6 @@ export const Settings = (props: PropsType) => {
     const [startValue, setStartValue] = useState<number>(props.startValue);
     const [maxValue, setMaxValue] = useState<number>(props.maxValue);
 
-
     const changeStartValue = (value: number) => {
         props.changeIsSetStatus(false);
         setStartValue(value);
