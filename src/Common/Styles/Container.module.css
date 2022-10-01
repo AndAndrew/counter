@@ -1,10 +1,10 @@
-.settingsMenu {
-    height: 40%;
-    width: 90%;
+.container {
+    min-width: 300px;
+    height: 200px;
     border: 2px #61dafb solid;
     border-radius: 6px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
+    justify-content: space-evenly;
 }

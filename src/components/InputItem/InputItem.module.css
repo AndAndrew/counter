@@ -1,21 +1,20 @@
 .inputItem {
+    width: 90%;
     display: flex;
+    justify-content: space-between;
 }
 
-.item {
-    padding: 5px 5px 5px 5px;
-    margin: auto;
-    display: inline-block;
+.inputItem input {
+    outline: none;
+    border-radius: 5px;
 }
 
 .error {
-    padding: 5px 5px 5px 5px;
     border: 2px darkred solid;
     background-color: lightpink;
 }
 
-input {
-    outline: none;
+.valueSetter {
     border: 2px #61dafb solid;
     border-radius: 5px;
 }

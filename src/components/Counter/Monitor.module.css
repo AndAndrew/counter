@@ -1,40 +1,23 @@
-
 .monitor {
-    font-size: 50px;
-    margin: 15px 15px 10px 15px;
-    padding: 15px 15px 15px 15px;
-    height: 70px;
+    height: 40%;
+    width: 90%;
     border: 2px #61dafb solid;
     border-radius: 6px;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .error {
-    font-size: 50px;
-    margin: 15px 15px 10px 15px;
-    padding: 15px 15px 15px 15px;
-    height: 70px;
-    border: 2px #61dafb solid;
-    border-radius: 6px;
     color: darkred;
 }
 
 .valueError {
     font-size: 20px;
-    vertical-align: bottom;
-    margin: 15px 15px 10px 15px;
-    padding: 30px 15px 0px 15px;
-    height: 70px;
-    border: 2px #61dafb solid;
-    border-radius: 6px;
     color: darkred;
 }
 
 .isNotSet {
-    font-size: 17px;
-    vertical-align: bottom;
-    margin: 15px 15px 10px 15px;
-    padding: 30px 15px 0px 15px;
-    height: 70px;
-    border: 2px #61dafb solid;
-    border-radius: 6px;
+    font-size: 20px;
 }

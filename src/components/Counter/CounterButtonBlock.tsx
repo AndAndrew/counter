@@ -1,4 +1,5 @@
 import {Button} from "../Button/Button";
+import styles from './CounterButtonBlock.module.css'
 
 type propsType = {
     inc: () => void,
@@ -19,7 +20,7 @@ export const CounterButtonBlock = (props: propsType) => {
     }
 
     return (
-        <div>
+        <div className={styles.buttonBlock}>
             <Button callBack={plusOne} nickName={'Inc'} disabled={props.error || props.valueError || !props.isSet}/>
             <Button callBack={reset} nickName={'Reset'} disabled={props.valueError || !props.isSet}/>
         </div>

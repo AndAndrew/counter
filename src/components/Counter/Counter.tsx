@@ -1,6 +1,7 @@
 import {Monitor} from "./Monitor";
 import {CounterButtonBlock} from "./CounterButtonBlock";
 import s from './Counter.module.css';
+import container from '../../Common/Styles/Container.module.css'
 import {useState} from "react";
 
 type PropsType = {
@@ -32,7 +33,7 @@ export const Counter = (props: PropsType) => {
     }
 
     return (
-        <div className={s.counter}>
+        <div className={container.container}>
             <Monitor counter={props.count}
                      error={countError}
                      valueError={props.valueError}

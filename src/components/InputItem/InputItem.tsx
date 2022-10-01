@@ -17,8 +17,8 @@ export const InputItem = (props: InputItemPropsType) => {
 
     return (
         <div className={s.inputItem}>
-            <div className={s.item}>{props.nickName}</div>
-            <input className={props.error ? s.item + ' ' + s.error : s.item}
+            <div>{props.nickName}</div>
+            <input className={props.error ? s.error : s.valueSetter}
                    value={props.value}
                    type="number"
                    onChange={onChangeHandler}/>

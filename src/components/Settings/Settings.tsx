@@ -1,4 +1,5 @@
 import s from './Settings.module.css';
+import container from '../../Common/Styles/Container.module.css'
 import {SettingsMenu} from "./SettingsMenu";
 import {SettingsButtonBlock} from "./SettingsButtonBlock";
 import {useState} from "react";
@@ -36,7 +37,7 @@ export const Settings = (props: PropsType) => {
     }
 
     return (
-        <div className={s.settings}>
+        <div className={container.container}>
             <SettingsMenu startValue={startValue}
                           maxValue={maxValue}
                           changeStartValue={changeStartValue}

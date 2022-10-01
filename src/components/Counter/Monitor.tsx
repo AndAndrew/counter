@@ -13,10 +13,10 @@ export const Monitor = (props: propsType) => {
         <>
             {
                 props.valueError
-                    ? <div className={s.valueError}>incorrect value</div>
+                    ? <div className={`${s.monitor} ${s.valueError}`}>incorrect value</div>
                     : props.isSet
-                        ? <div className={props.error ? s.error : s.monitor}>{props.counter}</div>
-                        : <div className={s.isNotSet}>enter values and press 'set'</div>
+                        ? <div className={props.error ? `${s.monitor} ${s.error}` : s.monitor}>{props.counter}</div>
+                        : <div className={`${s.monitor} ${s.isNotSet}`}>enter values and press 'set'</div>
             }
         </>
     )
